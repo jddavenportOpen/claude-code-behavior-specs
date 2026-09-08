@@ -6,6 +6,7 @@ stated — see the "Evidence discipline" section of the README.
 
 ## 2026-09-08
 
+- 12:27 — Published 3 Claude Code target-behavior specs with runnable reproductions to github.com/jddavenportOpen/claude-code-behavior-specs — SPEC-001 headless invocations orphan MCP children (7 kernel panics in 3 days), SPEC-002 transport failures indistinguishable from model output (63 corrupted documents, 7 to human approval), SPEC-003 silent out-of-enum settings discard. ISSUE-DRAFTS.md written but deliberately unfiled pending JD's approval.
 - Initial publication: SPEC-001 (headless invocations orphan MCP-server
   children), SPEC-002 (transport failures are indistinguishable from model
   output), SPEC-003 (out-of-enum settings values are silently discarded).
