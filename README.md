@@ -98,6 +98,11 @@ These are the rules this document was written under, stated so you can check it:
 | Incident window | 2026-08-31 (SPEC-002) · 2026-09-06 → 2026-09-08 (SPEC-001) |
 | Document date | 2026-09-08 |
 
+## Changes and corrections
+
+[`CHANGELOG.md`](CHANGELOG.md) records spec revisions, including any spec
+narrowed after re-testing. Corrections stay in the document.
+
 ## License
 
 MIT. See [LICENSE](LICENSE).
