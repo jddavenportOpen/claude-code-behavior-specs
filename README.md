@@ -2,7 +2,7 @@
 
 Three Claude Code CLI bugs I hit running agents headless. Each one has a repro script and the workaround I shipped.
 
-I run my own agent system on [Claude Code](https://github.com/anthropics/claude-code). I've built 100+ agents for it since February 2026, and a lot of them run unattended as `claude -p` jobs. Running the CLI that way, as a library with nobody watching, is what surfaced these. None of them is about what the model said. Each is about the harness: process cleanup, which stream an error comes out on, and how a settings file gets parsed. And each one quietly broke downstream work before I noticed.
+I run my own agent system on [Claude Code](https://github.com/anthropics/claude-code). I've built 100+ agents for it since February 2026, and a lot of them run unattended as `claude -p` jobs. Running the CLI that way, as a library with nobody watching, is what surfaced these. All three are in the CLI itself: how it cleans up child processes, which stream an error comes out on, and how it reads a settings file. And each one quietly broke downstream work before I noticed.
 
 Each spec pairs what the CLI does with what I think it should do, a small repro you can run yourself, the impact I measured, a proposed eval, and the workaround I built.
 
@@ -68,8 +68,8 @@ The rules I wrote this under, so you can check it:
 
 ## Scope and non-goals
 
-- These are **harness** behaviors: process lifecycle, output channels, config
-  parsing. Nothing here is about model quality or output content.
+- These are **CLI** behaviors: process lifecycle, output channels, config
+  parsing. Model quality and output content are out of scope.
 - No customer data, credentials, employer names, or personal identifiers appear
   in this repository. Counts are preserved; identifying detail is not.
 - Nothing here has been filed as an issue. [`ISSUE-DRAFTS.md`](ISSUE-DRAFTS.md)
