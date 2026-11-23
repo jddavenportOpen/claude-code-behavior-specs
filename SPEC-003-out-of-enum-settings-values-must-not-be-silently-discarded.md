@@ -86,7 +86,7 @@ or, with no other layer, to the model default. No warning is printed.
 
 ## 5. Evidence
 
-- The estate carried `"effortLevel": "max"` in four settings files **for
+- The system carried `"effortLevel": "max"` in four settings files **for
   approximately one month**, believing sessions were pinned to the top tier. They
   were not. The value was out-of-schema the entire time and produced no
   diagnostic on any of the thousands of sessions started from it.

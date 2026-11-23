@@ -110,7 +110,7 @@ after the MCP servers have started, then
 - **The orphan mechanism itself** — reproduced above, deterministically, in
   isolation from Claude Code.
 - **Prevalence of the caller-side shape in one codebase.** After the shared fix
-  landed, an AST lint over that estate's `agents/`, `scripts/` and `bridge/`
+  landed, an AST lint over that system's `agents/`, `scripts/` and `bridge/`
   trees still finds **23 call sites across 21 files** that spawn `claude` as a
   subprocess without putting it in its own process group. That is the residue in
   a single repository, written by one author, *after* the bug was understood and
@@ -175,7 +175,7 @@ independently verified in this document.**
   panic also forced a full Spotlight re-index on the next boot, which is itself a
   multi-hour multi-GB memory draw — so each outage made the next one arrive
   sooner. That amplifier is the reason the interval collapsed to 19 minutes.
-- **All work in flight at each panic was lost**, across ~30 concurrent sessions.
+- **All work in flight at each panic was lost**, across every session running at the time.
 - The blast radius is not proportional to the leaking caller. One misbehaving
   pipeline takes down every unrelated agent, session and daemon on the machine.
 

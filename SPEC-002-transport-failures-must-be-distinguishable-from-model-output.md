@@ -192,7 +192,7 @@ On the same rail, the account's weekly plan cap printed
 `You've hit your weekly limit · resets <date>` to stdout. The grading client
 returned that string as the model's response — and, believing it had a valid
 answer, **never failed over to one of the other accounts that still had quota.**
-So during a partial cap, grading failed estate-wide while capacity sat unused.
+So during a partial cap, grading failed system-wide while capacity sat unused.
 Different failure class, same root cause, same silent corruption, discovered
 weeks apart.
 
@@ -236,7 +236,7 @@ be, in any output format.
 ## 8. Workaround shipped — and why it is evidence, not a solution
 
 The only defence available to a text-mode caller is a **substring blocklist of
-English failure phrases**. The one on that estate now reads, in full:
+English failure phrases**. The one on that system now reads, in full:
 
 ```
 "organization has disabled", "OAuth session expired", "Failed to authenticate",

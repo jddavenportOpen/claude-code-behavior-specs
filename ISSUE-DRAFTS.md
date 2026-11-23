@@ -149,7 +149,7 @@ another credential* (usage limit) from *this credential is broken* (auth) from
 A programmatic caller cannot tell "the model answered" from "the model was never
 reached" without pattern-matching English error prose.
 
-Measured consequence on one estate: an OS directory-services daemon wedged for
+Measured consequence on one system: an OS directory-services daemon wedged for
 six hours; `claude -p` could not read its credential and printed the notice; two
 independent callers took it as the model's answer. **63 generated documents
 carried `Not logged in · Please run /login` as their body text.** 48 were
@@ -255,7 +255,7 @@ Three things make this a silence bug rather than a docs gap:
    persisted-settings route does not.
 3. Neither `/status`, `/doctor`, nor startup surfaces the discarded value.
 
-One estate carried `"effortLevel": "max"` in four settings files for about a
+One system carried `"effortLevel": "max"` in four settings files for about a
 month, believing sessions were pinned to the top tier. They were not, and
 thousands of sessions started without a single diagnostic. It also masked a
 second-order problem: two processes were both writing the key with different
