@@ -10,7 +10,7 @@ Each spec pairs what the CLI does with what I think it should do, a small repro 
 
 | | Spec | One line | Status |
 |---|---|---|---|
-| **001** | [A headless invocation must not orphan its MCP-server children](SPEC-001-headless-invocation-must-not-orphan-mcp-children.md) | When `claude` dies without a clean exit, its MCP child processes reparent to PID 1 and keep running. Under load that feeds on itself. It took my machine down 7 times in 3 days. | Reproduced on 2.1.263 (2026-09-08) and 2.1.323 (2026-11-22) |
+| **001** | [A headless invocation must not orphan its MCP-server children](SPEC-001-headless-invocation-must-not-orphan-mcp-children.md) | When `claude` dies without a clean exit, its MCP child processes reparent to PID 1 and keep running. Under load that feeds on itself. It took my machine down 7 times in 3 days. | Reproduced 2026-09-08 on 2.1.263. The repro is a stand-in that needs no Claude Code, and it still shows the leak (2026-11-22) |
 | **002** | [Transport failures must be distinguishable from model output](SPEC-002-transport-failures-must-be-distinguishable-from-model-output.md) | Login and quota failures come out as prose on stdout. In JSON mode they land in the `result` field next to `"subtype":"success"`. 63 documents got generated with a login notice as their body. | Reproduced on 2.1.263 (2026-09-08) and 2.1.323 (2026-11-22) |
 | **003** | [An out-of-enum settings value must not be silently discarded](SPEC-003-out-of-enum-settings-values-must-not-be-silently-discarded.md) | `{"effortLevel":"max"}` in settings.json is read as if the key were missing, with no error. My sessions ran at the default level for weeks while the config said otherwise. | Reproduced on 2.1.263 (2026-09-08) and 2.1.323 (2026-11-22). Lower impact |
 
@@ -79,7 +79,7 @@ The rules I wrote this under, so you can check it:
 
 | What | Version |
 |---|---|
-| Claude Code | 2.1.263 (written), 2.1.323 (all three re-run 2026-11-22, all three still reproduce) |
+| Claude Code | 2.1.263 (written). Repros re-run 2026-11-22: SPEC-002 and SPEC-003 still reproduce on 2.1.323, and the SPEC-001 stand-in still leaks |
 | OS | macOS 26.6.2 |
 | Incident window | 2026-08-31 (SPEC-002), 2026-09-06 to 2026-09-08 (SPEC-001) |
 | Document date | 2026-09-08 |

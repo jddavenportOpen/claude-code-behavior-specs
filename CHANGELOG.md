@@ -6,8 +6,9 @@ stated. See the "Evidence discipline" section of the README.
 
 ## 2026-11-22
 
-- Re-ran all three reproductions on Claude Code 2.1.323 (macOS 26.6.2). All three
-  still reproduce. In JSON mode the failure still comes back with
+- Re-ran the reproductions. SPEC-002 and SPEC-003 still reproduce on Claude Code
+  2.1.323 (macOS 26.6.2). The SPEC-001 repro is a stand-in that needs no Claude
+  Code, and it still shows the leak. In JSON mode the failure still comes back with
   `"subtype": "success"` and the login notice in `result`.
 
 ## 2026-09-08
